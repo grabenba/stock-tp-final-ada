@@ -118,8 +118,6 @@ Contiene los modelos de user y stock. Cada uno tiene por objetivo ejecutar todas
 
 ## ENDPOINTS
 
-// Agregar los endpoints que faltan
-
 - **GET |** 127.0.0.1/api --> Obtener info general útil de la APP. (agregarlo)
 
 - **GET |** 127.0.0.1/api/users --> Obtener todos los usuarios registrados.
@@ -136,5 +134,34 @@ Contiene los modelos de user y stock. Cada uno tiene por objetivo ejecutar todas
 
 - **DELETE |** 127.0.0.1/api/users/:id --> Eliminar un usuario.
 - **DELETE |** 127.0.0.1/api/stock/:id --> Eliminar un resgistro de stock.
+
+ENDPOINTS.
+
+Usuarios (userRouter)
+
+GET    | 127.0.0.1/api/ - Recupera una lista de todos los usuarios registrados.
+
+POST   | 127.0.0.1/api/users/login - Iniciar sesión y crea un token de autenticación.
+POST   | 127.0.0.1/api/users - Dar de alta nuevo usuario.
+
+PATCH  | 127.0.0.1/api/users/:username - Actualiza la información de un usuario. > "autenticación"
+
+DELETE | 127.0.0.1/api/users/logout - Cierra sesión y elimina el token de autenticación.
+DELETE | 127.0.0.1/api/users/:username - Elimina un usuario. > "autenticación"
+
+
+Stock (stockRouter)
+
+GET    | 127.0.0.1/api/ - Recupera información sobre el stock disponible.
+GET    | 127.0.0.1/api/stocks - Recupera una lista de todos los productos en el stock.
+GET    | 127.0.0.1/api/stocks/:name - Busca productos por nombre en el stock.
+
+POST   | 127.0.0.1/api//stocks - Agrega un nuevo producto al stock
+
+PATCH  | 127.0.0.1/api/stocks/:name - Actualiza un producto en el stock.
+
+DELETE | 127.0.0.1/api/stocks/:name - Elimina un producto del stock.
+
+Algunos endpoints requerirán autenticación y serán especificados con "autenticación" junto a su descripción.
 
 
