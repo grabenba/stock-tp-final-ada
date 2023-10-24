@@ -30,7 +30,6 @@ class UserController {
   }
 
   static async logout(req: Request, res: Response) {
-    console.log("Asd");
     const validatedData = validatePartialUser(req.body);
 
     if (!validatedData.success)

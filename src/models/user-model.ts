@@ -41,11 +41,8 @@ abstract class UserModel {
 	}
 
 	static async logout(userData: any) {
-		console.log("asda");
 		const { username } = userData;
 		const user = this.findUser(username);
-		console.log(user);
-
 		if (!user) return 400;
 		user.token = '';
 		

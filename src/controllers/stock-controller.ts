@@ -18,7 +18,6 @@ class StockController {
     }
 
     static async createStock(req: Request, res: Response) {
-        console.log("Asdasd");
         const { descripcion, color, talle, cantidad, precio } = req.body
         const stock = await StockModel.createStock({
             "descripcion": descripcion,
@@ -41,11 +40,9 @@ class StockController {
     static async updateByID(req: Request, res: Response) {
         const { id } = req.params
         const { descripcion, color, talle, cantidad, precio } = await req.body
-        console.log(req.body);
         const updatedStock = await StockModel.updateById({ descripcion, color, talle, cantidad, precio, id })
         res.status(201).json(updatedStock)
     }
-
 }
 
 export default StockController;
